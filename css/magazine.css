@@ -310,6 +310,8 @@ video{
 	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
 	box-shadow:0 0 20px rgba(0,0,0,0.2);
+	pointer-events: none;
+
 }
 
 .magazine-viewport .page img{
@@ -320,6 +322,7 @@ video{
 	-ms-user-select: none;
 	user-select: none;
 	margin:0;
+	pointer-events: none;
 }
 
 .magazine .even .gradient{
