@@ -274,14 +274,21 @@ video{
 .magazine .region{
 	position:absolute;
 	overflow:hidden;
-	background:#0066FF;
-	opacity:0.2;
+	/* AGREGAR UN VIDEO GIF DE TUS ANIMACIONES */
+	/* .magazine .region:nth-child(1) {} */
+	/* .magazine .region:nth-child(2) {} */
+	/* .magazine .region:nth-child(3) {} */
+	/* background:url(../img/a.gif) center center; */
+	/* background-size: cover; */
+	background: #1d6c82;
+	opacity:0;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 	-ms-border-radius:10px;
 	-o-border-radius:10px;
 	border-radius:10px;
-	cursor:pointer;
+	cursor:pointer !important;
+	z-index: 9999999999 !important;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 	filter: alpha(opacity=20);
 }
@@ -637,7 +644,21 @@ video{
 	z-index: 9;
 }
 
+.flechas{
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	z-index: 99;
+	width: 50px;
+	opacity: 0.8;
+}
+
 @media(max-width:1400px){
+	.flechas{
+		display: none;
+		opacity: 0;
+	}
 	.thumbnails{
 		display: none;
 	}
@@ -650,8 +671,9 @@ video{
 }
 
 @media(max-width:600px){
-	body{
-		transform: rotate(-90deg);
+	.flechas{
+		display: none;
+		opacity: 0;
 	}
 	.thumbnails{
 		display: none;

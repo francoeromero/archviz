@@ -80,7 +80,7 @@ function zoomTo(event) {
 
 function loadRegions(page, element) {
 
-	$.getJSON('pages/'+page+'-regions.json').
+	$.getJSON('../pages/'+page+'-regions.json').
 		done(function(data) {
 
 			$.each(data, function(key, region) {
@@ -139,9 +139,7 @@ function processRegion(region, regionType) {
 
 	switch (regionType) {
 		case 'link' :
-
 			window.open(data.url);
-
 		break;
 		case 'zoom' :
 

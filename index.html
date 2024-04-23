@@ -105,7 +105,7 @@
 		<source src="./video/background4.mp4" type="video/mp4">
 	</video>
 	<div class="capa"></div>
-
+	<img id='flechas' class="flechas" src="./img/flechitas_teclado.png" >
 	<!-- botones para pasar pagina -->
 	<div class="container">
 		<div class="magazine">
@@ -120,7 +120,7 @@
 	<!-- copyright -->
 	<div style="display: flex; flex-direction: column;">
 		
-		<p id="copy" style="z-index: 9; position: absolute; bottom: 0; color: white; left: 50%; transform: translateX(-50%);font-family:sans-serif; font-size: 1rem; text-shadow: 20px 20px 20px black; "> Copyright © 2024 - Desarrollado por Franco Ezequiel Romero</p>
+		<p id="copy" style="z-index: 9; position: absolute; bottom: 0; color: white; left: 50%; transform: translateX(-50%);font-family:sans-serif; font-size: 1rem; text-shadow: 1px 2px  black; "> Copyright © 2024 - Desarrollado por Franco Ezequiel Romero</p>
 	</div>
 </div>
 
@@ -176,7 +176,7 @@
 
 
 <script type="text/javascript">
-
+flechas = document.getElementById('flechas')
 function loadApp() {
 	/*
 	Esta funcion carga la aplicacion flipbook.
@@ -230,7 +230,7 @@ function loadApp() {
 
 			// The number of pages
 
-			pages: 14,
+			pages: 18,
 
 			// Events
 
@@ -289,7 +289,7 @@ function loadApp() {
 		flipbook: $('.magazine'),
 
 		max: function() { 
-			
+			flechas.style.display = 'none';
 			return largeMagazineWidth()/$('.magazine').width();
 
 		}, 
@@ -318,7 +318,6 @@ function loadApp() {
 			},
 
 			zoomIn: function () {
-
 				$('.thumbnails').hide();
 				$('.made').hide();
 				$('.magazine').removeClass('animated').addClass('zoom-in');
@@ -326,7 +325,6 @@ function loadApp() {
 				
 				if (!window.escTip && !$.isTouch) {
 					escTip = true;
-
 					$('<div />', {'class': 'exit-message'}).
 						html('<div>Press ESC to exit</div>').
 							appendTo($('body')).
@@ -338,7 +336,7 @@ function loadApp() {
 			},
 
 			zoomOut: function () {
-
+				flechas.style.display = 'block';
 				$('.exit-message').hide();
 				$('.thumbnails').fadeIn();
 				$('.made').fadeIn();
@@ -468,7 +466,6 @@ function loadApp() {
 
 
 	// Regions
-
 	if ($.isTouch) {
 		$('.magazine').bind('touchstart', regionClick);
 	} else {
