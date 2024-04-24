@@ -403,3 +403,9 @@ flecha.addEventListener('click', function(){
     
     menuAbierto = !menuAbierto;
 });
+flecha.click();
+
+
+setTimeout(function() {
+    flecha.click();
+}, 5000);
