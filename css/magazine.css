@@ -738,3 +738,8 @@ video{
 	font-family: "Michroma", sans-serif;
   }
   
+
+  /* scrollbar */
+  ::-webkit-scrollbar {
+    background-color: #f1f1f1;
+}
